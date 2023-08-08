@@ -72,7 +72,7 @@ resource "aws_instance" "project111" {
 
 	
 resource "aws_iam_policy" "bucket_policy" {
-  name        = "aws_s3_access"
+  name        = "aws_s3_access_1"
   path        = "/"
   description = "Allow "
 
@@ -98,7 +98,7 @@ resource "aws_iam_policy" "bucket_policy" {
 }
 
 resource "aws_iam_role" "ec2_role" {
-  name = "aws_s3_access"
+  name = "aws_s3_access_1"
 
   assume_role_policy = jsonencode({ 
 
@@ -122,7 +122,7 @@ resource "aws_iam_role_policy_attachment" "some_bucket_policy" {
 
 
 resource "aws_iam_instance_profile" "some_profile" {
-  name = "aws_s3_profile"
+  name = "aws_s3_profile_1"
   role = aws_iam_role.ec2_role.name
 }
 
@@ -131,7 +131,7 @@ resource "aws_iam_instance_profile" "some_profile" {
 
 
 resource "aws_security_group" "elb_sg" {
-  name        = "env_sg"
+  name        = "env_sg_1"
   vpc_id = aws_default_vpc.default.id
 
   ingress {

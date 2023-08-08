@@ -31,7 +31,7 @@ resource "aws_s3_object" "object-3" {
   etag = filemd5(".env")
 }
  
-resource "aws_s3_object" "object-3" {
+resource "aws_s3_object" "object-4" {
   bucket = aws_s3_bucket.example.id
   key    = "pg_hba.conf"
   source = "pg_hba.conf"
